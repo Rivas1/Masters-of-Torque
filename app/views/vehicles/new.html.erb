@@ -1,0 +1,22 @@
+<h1> Add Vehicle</h1>
+
+<%= form_for :vehicle do |f| %>
+	<p>
+		<%= f.label :year %><br>
+		<%= f.text_field :year %>
+	</p>
+
+	<p>
+		<%= f.label :make %><br>
+		<%= f.text_field :make %>
+	</p>
+
+	<p>
+		<%= f.label :model %><br>
+		<%= f.text_field :model %>
+	</p>
+
+	<p>
+		<%= f.submit %>
+	</p>
+<% end %>

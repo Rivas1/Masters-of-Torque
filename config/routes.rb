@@ -4,4 +4,5 @@ root 'vehicles#index'
 
 get 'about' => 'pages#about'
 
+resources :vehicles
 end
