@@ -6,4 +6,8 @@ class VehiclesController < ApplicationController
 	def new
 
 	end
+
+	def create
+		render plain: params[:vehicle].inspect
+	end
 end

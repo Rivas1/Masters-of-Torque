@@ -1,6 +1,6 @@
 <h1> Add Vehicle</h1>
 
-<%= form_for :vehicle do |f| %>
+<%= form_for :vehicle, url: vehicles_path do |f| %>
 	<p>
 		<%= f.label :year %><br>
 		<%= f.text_field :year %>
