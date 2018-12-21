@@ -1,3 +1,6 @@
 <h2><%= @vehicle.year %></h2>
-<h2><%= @vehicle.make %></h2>
-<h2><%= @vehicle.model %></h2>
+<p><%= @vehicle.make %></p>
+<p><%= @vehicle.model %></p>
+
+<hr>
+<%= link_to "Edit", edit_vehicle_path(@vehicle), :class => 'btn btn-default' %>
