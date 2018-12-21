@@ -27,13 +27,20 @@ class VehiclesController < ApplicationController
 	end
 
 	def update
-			@vehicle = Vehicle.find(params[:id])
+		@vehicle = Vehicle.find(params[:id])
 
-			if (@vehicle.update(vehicle_params))
-				redirect_to @vehicle
-			else
-				render 'edit'
-			end
+		if (@vehicle.update(vehicle_params))
+			redirect_to @vehicle
+		else
+			render 'edit'
+		end
+	end
+	
+	def destroy
+		@Vehicle = Vehicle.find(params[:id])
+		@Vehicle.destroy
+
+		redirect_to vehicles_path
 	end
 
 	private def vehicle_params
