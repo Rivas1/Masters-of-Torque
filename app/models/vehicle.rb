@@ -1,5 +1,5 @@
 class Vehicle < ApplicationRecord
-	validates :year, :make, :model, presence: true,
-									length: {minimum: 4}
-				
+	validates :year, presence: true, length: {minimum: 4}
+    validates :make, presence: true, length: {minimum: 3}
+    validates :model, presence: true, length: {minimum: 2}
 end
