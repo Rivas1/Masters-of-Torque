@@ -1,28 +1,32 @@
-<h1>Edit Vehicle</h1>
+<div class=container>
 
-<%= form_for :vehicle, url: vehicle_path(@vehicle), method: :patch do |f| %>
-	<% if @vehicle.errors.any? %>
-			<% @vehicle.errors.full_messages.each do |msg| %>
-				<div class="alert alert-danger"><%= msg %></div>
+	<h1>Edit Vehicle</h1>
+
+	<%= form_for :vehicle, url: vehicle_path(@vehicle), method: :patch do |f| %>
+		<% if @vehicle.errors.any? %>
+				<% @vehicle.errors.full_messages.each do |msg| %>
+					<div class="alert alert-danger"><%= msg %></div>
+				<% end %>
 			<% end %>
-		<% end %>
 
-	<p>
-		<%= f.label :year %><br>
-		<%= f.text_field(:year, {:class => 'form-control'} ) %>
-	</p>
+		<p>
+			<%= f.label :year %><br>
+			<%= f.text_field(:year, {:class => 'form-control'} ) %>
+		</p>
 
-	<p>
-		<%= f.label :make %><br>
-		<%= f.text_field(:make, {:class => 'form-control'} ) %>
-	</p>
+		<p>
+			<%= f.label :make %><br>
+			<%= f.text_field(:make, {:class => 'form-control'} ) %>
+		</p>
 
-	<p>
-		<%= f.label :model %><br>
-		<%= f.text_field(:model, {:class => 'form-control'} )%>
-	</p>
+		<p>
+			<%= f.label :model %><br>
+			<%= f.text_field(:model, {:class => 'form-control'} )%>
+		</p>
 
-	<p>
-		<%= f.submit({:class => 'btn btn-primary'})%>
-	</p>
-<% end %>
+		<p>
+			<%= f.submit({:class => 'btn btn-primary'})%>
+		</p>
+	<% end %>
+
+</div>

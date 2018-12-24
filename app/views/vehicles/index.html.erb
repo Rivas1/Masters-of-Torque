@@ -1,9 +1,13 @@
-<h1>Vehicle List</h1>
-<hr>
+<div class=container>
+	<h1>Vehicle List</h1>
+	<hr>
+</div>
 <% @vehicles.each do |vehicle| %>
 		<div class="container">
 			<h5><%= vehicle.year %> <%= vehicle.make %> <%= vehicle.model %>
 				 <%= link_to "More", vehicle_path(vehicle), :class => 'btn btn-outline-info '%></h5>
 				 <hr>
 		</div>
+
+
 	<% end %>
