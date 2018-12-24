@@ -1,4 +1,6 @@
 class VehiclesController < ApplicationController
+	http_basic_authenticate_with name: "Christopher", password: "123", except: [:index, :show]
+
 	def index
 			@vehicles = Vehicle.all
 	end
