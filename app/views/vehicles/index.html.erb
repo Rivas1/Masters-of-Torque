@@ -1,6 +1,11 @@
 <div class=container>
-	<h1>Vehicle List</h1>
+	<h1>Vehicles List</h1>
+	<%= form_tag vehicles_path do %>
+		<%= text_field_tag :search %>
+		<%= submit_tag "Search" %>
+	<% end %>
 	<hr>
+
 </div>
 <% @vehicles.each do |vehicle| %>
 		<div class="container">
