@@ -2,9 +2,11 @@ class VehiclesController < ApplicationController
 	http_basic_authenticate_with name: "Christopher", password: "123", except: [:index, :show]
 
 	def index
+		# && params.has_key?(:make))
+		# if params.has_key?(:model)
 		if params[:search]
-			# @vehicle = Vehicle.find(params[:search])
 			@vehicles = Vehicle.where(:year => params[:search] )
+			
 		else
 			@vehicles = Vehicle.all
 		end
@@ -51,6 +53,6 @@ class VehiclesController < ApplicationController
 	end
 
 	private def vehicle_params
-		params.permit(:year, :make, :model)
+		params.require(:vehicle).permit(:year, :make, :model)
 	end
 end
