@@ -3,8 +3,8 @@ class VehiclesController < ApplicationController
 
 	def index
 		if params[:search]
-			@vehicle = Vehicle.find(params[:search])
-			redirect_to @vehicle
+			# @vehicle = Vehicle.find(params[:search])
+			@vehicles = Vehicle.where(:year => params[:search] )
 		else
 			@vehicles = Vehicle.all
 		end
