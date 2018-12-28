@@ -2,7 +2,12 @@ class VehiclesController < ApplicationController
 	http_basic_authenticate_with name: "Christopher", password: "123", except: [:index, :show]
 
 	def index
+		if params[:search]
+			@vehicle = Vehicle.find(params[:search])
+			redirect_to @vehicle
+		else
 			@vehicles = Vehicle.all
+		end
 	end
 
 	def show
