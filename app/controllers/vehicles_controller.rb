@@ -2,8 +2,6 @@ class VehiclesController < ApplicationController
 	http_basic_authenticate_with name: "Christopher", password: "123", except: [:index, :show]
 
 	def index
-		# && params.has_key?(:make))
-		# if params.has_key?(:model)
 		if params[:search]
 			@vehicles = Vehicle.where(:year => params[:search] )
 			
