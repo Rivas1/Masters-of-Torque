@@ -4,7 +4,8 @@ class VehiclesController < ApplicationController
 	def index
 		if params[:search]
 			@vehicles = Vehicle.where(:year => params[:search] )
-			
+			@vehicles = @vehicles + Vehicle.where(:make => params[:search].titleize )
+			@vehicles = @vehicles + Vehicle.where(:model => params[:search].titleize )
 		else
 			@vehicles = Vehicle.all
 		end
