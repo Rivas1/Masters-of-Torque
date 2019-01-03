@@ -1,11 +1,21 @@
 class VehiclesController < ApplicationController
 	http_basic_authenticate_with name: "Christopher", password: "123", except: [:index, :show]
-
+  # Let user store info however case-insensitive
+  # Perform database search where it first lowercases then searches
+  # ^^^ Optimize opportunity
 	def index
-		if params[:search]
-			@vehicles = Vehicle.where(:year => params[:search] )
-			@vehicles = @vehicles + Vehicle.where(:make => params[:search].titleize )
-			@vehicles = @vehicles + Vehicle.where(:model => params[:search].titleize )
+		if params[:search] # split search string
+			@searchString = params[:search].split
+			# render plain: params[:search].split.inspect # shows split string excellent!
+			# @year =
+			# @make =
+			# @model =
+
+			# @year, @make, @model = params[:search].split
+			@vehicles = []
+			@vehicles = @vehicles + Vehicle.where(:year => params[:search].split )
+			@vehicles = @vehicles + Vehicle.where(:make => params[:search].split )
+			@vehicles = @vehicles + Vehicle.where(:model => params[:search].split )
 		else
 			@vehicles = Vehicle.all
 		end
@@ -21,7 +31,7 @@ class VehiclesController < ApplicationController
 
 	def create
 		# render plain: params[:vehicle].inspect
-		@vehicle = Vehicle.new(vehicle_params)
+		@vehicle = Vehicle.new(vehicle_params) # may title params here 
 
 		if (@vehicle.save)
 			redirect_to @vehicle
@@ -39,7 +49,7 @@ class VehiclesController < ApplicationController
 
 		if (@vehicle.update(vehicle_params))
 			redirect_to @vehicle
-		else
+		else	
 			render 'edit'
 		end
 	end
