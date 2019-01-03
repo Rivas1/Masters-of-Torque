@@ -16,6 +16,7 @@ class VehiclesController < ApplicationController
 			@vehicles = @vehicles + Vehicle.where(:year => params[:search].split )
 			@vehicles = @vehicles + Vehicle.where(:make => params[:search].split )
 			@vehicles = @vehicles + Vehicle.where(:model => params[:search].split )
+			@vehicles = @vehicles.uniq
 		else
 			@vehicles = Vehicle.all
 		end
