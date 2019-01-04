@@ -1,8 +1,14 @@
 .jumbotron {
-	/*background-color: green;*/
+	background-color: silver;
 }
 
 .display-4 {
 	color: yellow;
 	text-shadow: 0px 10px 20px #000000;
+}
+
+.wrapper {
+	.btn {
+		color: black;
+	}
 }
