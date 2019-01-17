@@ -1,5 +1,5 @@
 class VehiclesController < ApplicationController
-	http_basic_authenticate_with name: "Christopher", password: "123", except: [:index, :show]
+	# http_basic_authenticate_with name: "Christopher", password: "123", except: [:index, :show]
   # Let user store info however case-insensitive
   # Perform database search where it first lowercases then searches
   # ^^^ Optimize opportunity
