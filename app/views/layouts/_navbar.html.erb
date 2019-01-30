@@ -22,10 +22,22 @@
                    
           <%= form_tag vehicles_path, class: 'form-inline my-2 my-lg-0', :method => 'get' do %>
           <%= text_field_tag :search, params[:search], placeholder: "e.g. Honda Civic", class: 'form-control mr-sm-2' %>
-          <%= submit_tag "Search", name: nil, class: 'btn btn-outline-success my-2 my-sm-0'  %> 
+          <%= submit_tag "Search", name: nil, class: 'btn btn-outline-success my-2 my-sm-0 mr-sm-2'  %> 
           <% end %>
+
+
+          
+              <%= link_to "Log In", signup_url, :class => 'btn btn-outline-info my-2 my-sm-0 mr-sm-2'  %>
+            
+
+        
+              <%= link_to "Sign Up", signup_url, :class => 'btn btn-info my-2 my-sm-0 '  %>
+            
+
 
     </div>
   </div>
 </nav>
 
+
+<!-- https://vpic.nhtsa.dot.gov/api/# -->

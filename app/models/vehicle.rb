@@ -1,4 +1,5 @@
 class Vehicle < ApplicationRecord
+	belongs_to :user
 	include Filterable
 	# scope :year, -> (year) { where year: year }
 	scope :year, 	-> (year) 	{ where("year = ?", year ) }
